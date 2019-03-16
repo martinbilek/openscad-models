@@ -5,12 +5,20 @@ use <body-plate.scad>;
 use <legs.scad>;
 use <other-parts.scad>;
 
+// Variables
+
+motors_distance = 85;
+propellers_radius = 25.5;
+
+const0 = 60;
+const1 = (motors_distance - const0) / 2;
+
 ////////////////////////////////////////////
 
 // Motors arms
-translate([0,-2.5,3]) {
+translate([0,-const1,3]) {
     MotorsArm(center=true);
-    translate([0,65,0]) {
+    translate([0,motors_distance,0]) {
         MotorsArm(center=true);   
     }
 }
@@ -24,11 +32,11 @@ translate([0,30,6]) {
 }
 
 // Legs
-translate([0,-2.5,-3]) {
+translate([0,-const1,-3]) {
     rotate([0,180,0]) {
         color("brown", 0.8) MotorsLeg();
     }
-    translate([0,65,0]) {
+    translate([0,motors_distance,0]) {
         rotate([0,180,0]) {
             color("brown", 0.8) MotorsLeg();
         }
@@ -98,28 +106,28 @@ color("red", 1) translate([0,20,7.5]) {
     }
 }
 
-// vrtule...
-color("brown", 0.5) translate([32.5,-2.5,30]) {
+// Propellers...
+color("brown", 0.5) translate([motors_distance/2,-const1,const0/2]) {
     difference(){
-        cylinder(2, 25.5, 25.5, true);
+        cylinder(2, propellers_radius, propellers_radius, true);
         cylinder(2*2, 1, 1, true);
     }
 }
-color("brown", 0.5) translate([-32.5,-2.5,30]) {
+color("brown", 0.5) translate([-motors_distance/2,-const1,const0/2]) {
     difference(){
-        cylinder(2, 25.5, 25.5, true);
+        cylinder(2, propellers_radius, propellers_radius, true);
         cylinder(2*2, 1, 1, true);
     }
 }
-color("brown", 0.5) translate([32.5,62.5,30]) {
+color("brown", 0.5) translate([motors_distance/2,motors_distance-const1,const0/2]) {
     difference(){
-        cylinder(2, 25.5, 25.5, true);
+        cylinder(2, propellers_radius, propellers_radius, true);
         cylinder(2*2, 1, 1, true);
     }
 }
-color("brown", 0.5) translate([-32.5,62.5,30]) {
+color("brown", 0.5) translate([-motors_distance/2,motors_distance-const1,const0/2]) {
     difference(){
-        cylinder(2, 25.5, 25.5, true);
+        cylinder(2, propellers_radius, propellers_radius, true);
         cylinder(2*2, 1, 1, true);
     }
 }
