@@ -2,6 +2,7 @@ $fn = 500;  // render quality
 
 use <motors-arm.scad>;
 use <body-plate.scad>;
+use <legs.scad>;
 use <other-parts.scad>;
 
 ////////////////////////////////////////////
@@ -20,6 +21,18 @@ translate([0,30,0]) {
 }
 translate([0,30,6]) {
     color("blue", 0.8) BodyPlateMiddle(center=true);
+}
+
+// Legs
+translate([0,-2.5,-3]) {
+    rotate([0,180,0]) {
+        color("brown", 0.8) MotorsLeg();
+    }
+    translate([0,65,0]) {
+        rotate([0,180,0]) {
+            color("brown", 0.8) MotorsLeg();
+        }
+    }
 }
 
 // Circuits
