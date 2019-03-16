@@ -7,7 +7,7 @@ use <other-parts.scad>;
 
 // Variables
 
-motors_distance = 85;
+motors_distance = 80;
 propellers_radius = 25.5;
 
 const0 = 60;
