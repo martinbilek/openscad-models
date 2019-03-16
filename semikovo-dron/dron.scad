@@ -1,4 +1,4 @@
-$fn = 500;  // render quality
+include <config.scad>;
 
 use <motors-arm.scad>;
 use <body-plate.scad>;
@@ -7,7 +7,7 @@ use <other-parts.scad>;
 
 // Variables
 
-motors_distance = 80;
+motors_distance = cfg_motors_distance;
 propellers_radius = 25.5;
 
 const0 = 60;

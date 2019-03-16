@@ -1,4 +1,4 @@
-$fn = 100;  // render quality
+include <config.scad>;
 
 // Variables
 
@@ -10,7 +10,7 @@ motor_axis_hole = 2.4;
 arm_width = 8;
 arm_height = motor_plate_height;
 
-motors_centers_distance = 80;
+motors_centers_distance = cfg_motors_distance;
 
 body_screw_hole_radius = 1.0+0.1;  //screw M2
 body_screw_holes_space = 12;

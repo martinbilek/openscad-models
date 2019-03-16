@@ -1,10 +1,10 @@
-$fn = 100;  // render quality
+include <config.scad>;
 
 // Variables
 
 body_screw_hole_radius = 1.0+0.1;  //screw M2
 body_screw_holes_space = 12;
-motors_distance = 80;
+motors_distance = cfg_motors_distance;
 
 plate_height = 2;
 plate_width = 25;

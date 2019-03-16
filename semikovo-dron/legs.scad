@@ -1,4 +1,4 @@
-$fn = 100;  // render quality
+include <config.scad>;
 
 // Variables
 
