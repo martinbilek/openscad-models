@@ -2,13 +2,13 @@ $fn = 100;  // render quality
 
 // Variables
 
-plate_height = 3;
-plate_width = 25;
-plate_length = 80;
-
 body_screw_hole_radius = 1.0+0.1;  //screw M2
 body_screw_holes_space = 12;
 motors_distance = 65;
+
+plate_height = 2;
+plate_width = 25;
+plate_length = motors_distance + 20;
 
 cpu_screw_hole_radius = 1.0+0.1;  //screw M2
 cpu_screw_hole_space = 20;
@@ -84,6 +84,12 @@ module BodyPlateBottom(center=false){
         }
         translate([plate_width+shape_cutout_radius/4,-32,0]){
             ShapeCutout();
+        }
+        translate([0,-20,0]){
+            cube([4,2,plate_height*2], center);
+        }
+        translate([0,20,0]){
+            cube([4,2,plate_height*2], center);
         }
     }
 }
