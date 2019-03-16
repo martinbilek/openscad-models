@@ -60,14 +60,26 @@ module HolesForBody(){
 
 module ShapeCutout(){
     cylinder(plate_height*2, shape_cutout_radius, shape_cutout_radius, true);
+    translate([-shape_cutout_radius,-plate_length,-plate_height]){
+        cube([shape_cutout_radius,plate_length,plate_height*2]);
+    }
     translate([-plate_width*2-12.5,0,0]){
         cylinder(plate_height*2, shape_cutout_radius, shape_cutout_radius, true);
+        translate([0,-plate_length,-plate_height]){
+            cube([shape_cutout_radius,plate_length,plate_height*2]);
+        }
     }
     translate([-plate_width*2-12.5,64,0]){
         cylinder(plate_height*2, shape_cutout_radius, shape_cutout_radius, true);
+        translate([0,0,-plate_height]){
+            cube([shape_cutout_radius,plate_length,plate_height*2]);
+        }
     }
     translate([0,64,0]){
         cylinder(plate_height*2, shape_cutout_radius, shape_cutout_radius, true);
+        translate([-shape_cutout_radius,0,-plate_height]){
+            cube([shape_cutout_radius,plate_length,plate_height*2]);
+        }
     }
 }
 
