@@ -6,7 +6,7 @@ body_screw_hole_radius = 1.0+0.1;  //screw M2
 body_screw_holes_space = 12;
 motors_distance = cfg_motors_distance;
 
-plate_height = 2;
+plate_height = 2.5;
 plate_width = 25;
 plate_length = motors_distance + 20;
 
