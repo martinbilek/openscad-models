@@ -3,6 +3,7 @@ include <config.scad>;
 use <motors-arm.scad>;
 use <body-plate.scad>;
 use <legs.scad>;
+use <armor.scad>;
 use <other-parts.scad>;
 
 // Variables
@@ -21,6 +22,10 @@ translate([0,-const1,3]) {
     translate([0,motors_distance,0]) {
         MotorsArm(center=true);   
     }
+}
+
+translate([0,-5,8.5]) {
+    color("white", 0.8) Armor();
 }
 
 // Bottom body
