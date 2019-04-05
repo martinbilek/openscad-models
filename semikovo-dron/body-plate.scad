@@ -2,7 +2,7 @@ include <config.scad>;
 
 // Variables
 
-body_screw_hole_radius = 1.0+0.1;  //screw M2
+body_screw_hole_radius = 1.0+0.15;  //screw M2
 body_screw_holes_space = 12;
 motors_distance = cfg_motors_distance;
 
@@ -36,19 +36,6 @@ module HolesForCPU(){
 
 module HolesForBody(){
     union() {
-        //translate([-(body_screw_holes_space/2),-body_screw_hole_radius,0]){
-        //    cylinder(plate_height*2, body_screw_hole_radius, body_screw_hole_radius, true);
-        //};
-        //translate([-(body_screw_holes_space/4),body_screw_hole_radius,0]){
-        //    cylinder(plate_height*2, body_screw_hole_radius, body_screw_hole_radius, true);
-        //};
-        //translate([body_screw_holes_space/2,-body_screw_hole_radius,0]){
-        //    cylinder(plate_height*2, body_screw_hole_radius, body_screw_hole_radius, true);
-        //};
-        //translate([body_screw_holes_space/4,body_screw_hole_radius,0]){
-        //    cylinder(plate_height*2, body_screw_hole_radius, body_screw_hole_radius, true);
-        //};
-
         translate([-(body_screw_holes_space/4),0,0]){
             cylinder(plate_height*2, body_screw_hole_radius, body_screw_hole_radius, true);
         };
@@ -82,7 +69,7 @@ module ShapeCutout(){
         }
     }
 }
-
+//color("brown", 0.4) ShapeCutout();
 module BodyPlateBottom(center=false){
     difference(){
         difference() {
@@ -113,7 +100,7 @@ module BodyPlateMiddle(center=false){
     }
 }
 
-BodyPlateBottom(true);
+//BodyPlateBottom(true);
 translate([plate_width+10,0,0]){
     BodyPlateMiddle(true);
 }
